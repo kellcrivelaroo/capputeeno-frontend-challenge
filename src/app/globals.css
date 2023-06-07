@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scrollbar-width: thin;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+body {
+  overflow: overlay;
+}
+
+.icon {
+  filter: invert(48%) sepia(10%) saturate(403%) hue-rotate(201deg) brightness(91%) contrast(88%);
+}
+
+.icon:hover {
+  filter: invert(58%) sepia(59%) saturate(4178%) hue-rotate(339deg) brightness(92%) contrast(107%);
+}
