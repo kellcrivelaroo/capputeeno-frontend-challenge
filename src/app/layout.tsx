@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 import {
-  Bai_Jamjuree as bj,
   Saira,
   Saira_Stencil_One as SairaStencilOne,
+  Bai_Jamjuree as bj,
 } from 'next/font/google'
 
 import './globals.css'
@@ -15,7 +15,7 @@ const saira = Saira({
   variable: '--font-sans',
 })
 
-const sairaStencil = SairaStencilOne({
+const sairaStencil = bj({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-logo',

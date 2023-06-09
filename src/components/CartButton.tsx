@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import shoppingBag from '../assets/shopping-bag.svg'
+import Link from 'next/link'
 
 export default function CartButton() {
   const [cartItems, setCartItems] = useState('0')
@@ -11,7 +12,7 @@ export default function CartButton() {
   }, [])
 
   return (
-    <button className="relative">
+    <Link className="relative" href="/cart">
       <Image
         src={shoppingBag}
         width={24}
@@ -25,6 +26,6 @@ export default function CartButton() {
       >
         {cartItems}
       </div>
-    </button>
+    </Link>
   )
 }

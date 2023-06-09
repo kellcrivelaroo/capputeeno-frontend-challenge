@@ -35,6 +35,7 @@ module.exports = {
         button: '#617480',
         darkest: '#09090A',
         div: '#DCE2E5',
+        divBorder: '#A8A8B3',
         pagination: '#E9E9F0',
       },
       cart: {

@@ -50,12 +50,11 @@ export function getProductsByPage(
   const categoryFilter = getCategoryByType(category)
   const sortSettings = getFieldByPriority(priority)
   const numberPerPage = 12
+  const offset = numberPerPage * page
 
   return gql`
     query {
-      allProducts (${categoryFilter} ${sortSettings}, limit: ${numberPerPage}, offset: ${
-    numberPerPage * page
-  }){
+      allProducts (${categoryFilter} ${sortSettings}, limit: ${numberPerPage}, offset: ${offset}){
         id
         name
         description
@@ -64,6 +63,23 @@ export function getProductsByPage(
         price_in_cents
         sales
         created_at
+      }
+    }
+  `
+}
+
+export function getQueryById(id: string) {
+  return gql`
+    query {
+      allProducts(
+        where: { id: { _eq: "${id}" } }
+      ) {
+        id
+        name
+        description
+        category
+        image_url
+        price_in_cents
       }
     }
   `

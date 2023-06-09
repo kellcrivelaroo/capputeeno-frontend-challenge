@@ -23,10 +23,14 @@ body {
   overflow: overlay;
 }
 
-.icon {
+button .icon, a .icon {
   filter: invert(48%) sepia(10%) saturate(403%) hue-rotate(201deg) brightness(91%) contrast(88%);
 }
 
-.icon:hover {
+button:hover .icon, a:hover .icon {
   filter: invert(58%) sepia(59%) saturate(4178%) hue-rotate(339deg) brightness(92%) contrast(107%);
+}
+
+.add-to-cart {
+  filter: invert(100%) sepia(8%) saturate(7500%) hue-rotate(183deg) brightness(109%) contrast(106%);
 }
