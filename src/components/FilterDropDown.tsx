@@ -8,15 +8,11 @@ import chevIcon from '../assets/chev-down.svg'
 
 export default function FilterDropDown() {
   const [isOpen, setIsOpen] = useState(false)
-  const { setPriority, setIsLoading } = useContext(FilterContext)
+  const { setPriority } = useContext(FilterContext)
 
   function handleUpdatePriority(value: FilterPriorities) {
     setPriority(value)
     setIsOpen(false)
-    setIsLoading(true)
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 500)
   }
 
   const divRef = useRef<HTMLDivElement>(null)

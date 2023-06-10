@@ -13,6 +13,12 @@ export default function CategoryBar() {
   const [selectedOptionInfo, setSelectedOptionInfo] =
     useState<selectedOptionInfoProps | null>(null)
 
+  const { category, setCategory } = useContext(FilterContext)
+
+  useEffect(() => {
+    setCategory(FilterCategories.ALL)
+  }, [setCategory])
+
   function handleOptionClick(
     event: React.MouseEvent<HTMLLIElement>,
     selectedCategory: FilterCategories,
@@ -24,8 +30,6 @@ export default function CategoryBar() {
     setCategory(selectedCategory)
     setPage(0)
   }
-
-  const { category, setCategory } = useContext(FilterContext)
 
   return (
     <ul className="relative flex gap-10 text-gray-light [&>li.selected]:font-bold [&>li]:cursor-pointer [&>li]:uppercase">
