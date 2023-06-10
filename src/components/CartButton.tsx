@@ -5,10 +5,18 @@ import shoppingBag from '../assets/shopping-bag.svg'
 import Link from 'next/link'
 
 export default function CartButton() {
-  const [cartItems, setCartItems] = useState('0')
+  const [cartItems, setCartItems] = useState(0)
 
   useEffect(() => {
-    setCartItems(localStorage.getItem('carrinho') as string)
+    const cartProducts = localStorage.getItem('cart-products')
+
+    if (cartProducts !== null) {
+      let num = 0
+      JSON.parse(cartProducts).forEach(
+        (product: { quantity: number }) => (num = num + product.quantity),
+      )
+      setCartItems(num)
+    }
   }, [])
 
   return (

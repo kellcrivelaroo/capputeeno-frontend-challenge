@@ -1,8 +1,37 @@
+'use client'
+import { ProductProps } from '@/utils/interfaces'
 import BackButton from '@/components/BackButton'
 import OrderSummary from './components/OrderSummary'
 import ProductCard from './components/ProductCard'
+import formatPrice from '@/utils/format-price'
+import { useEffect, useState } from 'react'
 
 export default function Cart() {
+  const storedValue = localStorage.getItem('cart-products')
+  const [cartProductsArray, setCartProductsArray] = useState<ProductProps[]>([])
+  const [productsTotalQuantity, setProductsTotalQuantity] = useState(0)
+  const [productsTotalPrice, setProductsTotalPrice] = useState(0)
+
+  useEffect(() => {
+    if (storedValue !== null) {
+      const parsedValue = JSON.parse(storedValue)
+      setCartProductsArray(parsedValue)
+
+      let productsPartialQuantity = 0
+      let productsPartialPrice = 0
+
+      parsedValue.forEach(
+        (product: { quantity: number; price_in_cents: number }) => {
+          productsPartialQuantity += product.quantity
+          productsPartialPrice += product.quantity * product.price_in_cents
+        },
+      )
+
+      setProductsTotalQuantity(productsPartialQuantity)
+      setProductsTotalPrice(productsPartialPrice)
+    } else setCartProductsArray([])
+  }, [storedValue])
+
   return (
     <div className="grid w-full grid-cols-[1fr_352px] gap-8 py-10 text-gray-dark">
       <div className="flex flex-col">
@@ -11,13 +40,25 @@ export default function Cart() {
           Seu carrinho
         </h1>
         <p className="mb-2 font-light">
-          {`Total (3 produtos) `}
-          <span className="font-semibold">R$ 161,00</span>
+          {`Total (${productsTotalQuantity} produtos) `}
+          <span className="font-semibold">
+            {formatPrice(productsTotalPrice)}
+          </span>
         </p>
-        <ProductCard />
-        <ProductCard />
+        {cartProductsArray.map((product) => {
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              cartProducts={cartProductsArray}
+              setCartProducts={setCartProductsArray}
+              totalQuantity={productsTotalQuantity}
+              setTotalQuantity={setProductsTotalQuantity}
+            />
+          )
+        })}
       </div>
-      <OrderSummary />
+      <OrderSummary total={productsTotalPrice} />
     </div>
   )
 }

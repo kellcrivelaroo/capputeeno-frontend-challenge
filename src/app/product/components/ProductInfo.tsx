@@ -4,6 +4,7 @@ import { useGetProduct } from '@/hooks/useGetProduct'
 import { ProductProps } from '@/utils/interfaces'
 import formatPrice from '@/utils/format-price'
 import LoadSpiner from '@/components/LoadSpiner'
+import { useRouter } from 'next/navigation'
 
 interface ProductInfoProps {
   id: string
@@ -16,6 +17,31 @@ const categoryTranslate = (category: string) => {
 
 export default function ProductInfo({ id }: ProductInfoProps) {
   const product: ProductProps = useGetProduct(id)
+  const router = useRouter()
+
+  const handleAddToCart = () => {
+    const cartProducts = localStorage.getItem('cart-products')
+
+    if (cartProducts) {
+      const cartProductsArray = JSON.parse(cartProducts)
+      const productIndex = cartProductsArray.findIndex(
+        (item: { id: string }) => item.id === product.id,
+      )
+      if (productIndex !== -1) {
+        cartProductsArray[productIndex].quantity++
+      } else {
+        cartProductsArray.push({ ...product, quantity: 1 })
+      }
+      localStorage.setItem('cart-products', JSON.stringify(cartProductsArray))
+    } else {
+      localStorage.setItem(
+        'cart-products',
+        JSON.stringify([{ ...product, quantity: 1 }]),
+      )
+    }
+
+    router.push('/cart')
+  }
 
   return (
     <>
@@ -50,7 +76,8 @@ export default function ProductInfo({ id }: ProductInfoProps) {
             </div>
             <button
               className="flex items-center justify-center gap-2 rounded bg-brand-blue py-2 uppercase 
-      text-white transition-all duration-300 hover:brightness-110"
+            text-white transition-all duration-300 hover:brightness-110"
+              onClick={handleAddToCart}
             >
               <Image
                 src={shoppingBag}

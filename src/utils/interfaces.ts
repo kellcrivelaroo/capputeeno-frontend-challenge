@@ -6,4 +6,5 @@ export interface ProductProps {
   description: string
   image_url: string
   price_in_cents: number
+  quantity: number
 }

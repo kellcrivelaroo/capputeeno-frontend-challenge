@@ -15,7 +15,7 @@ const saira = Saira({
   variable: '--font-sans',
 })
 
-const sairaStencil = bj({
+const sairaStencil = SairaStencilOne({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-logo',

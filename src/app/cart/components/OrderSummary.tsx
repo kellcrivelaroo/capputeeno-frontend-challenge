@@ -1,4 +1,9 @@
-export default function OrderSummary() {
+import formatPrice from '@/utils/format-price'
+
+export default function OrderSummary({ total }: { total: number }) {
+  const deliveryFee = 4000
+  const deliveryTotal = total + deliveryFee
+
   return (
     <div className="flex min-h-full w-full flex-col justify-between gap-20 rounded bg-white p-6 pt-4 text-gray-dark">
       {/* Bloco superior */}
@@ -8,16 +13,16 @@ export default function OrderSummary() {
         </span>
         <div className="mb-3 flex w-full justify-between">
           <span className="">Subtotal de produtos</span>
-          <span className="">R$ 161,00</span>
+          <span className="">{formatPrice(total)}</span>
         </div>
         <div className="mb-6 flex w-full justify-between">
           <span className="">Entrega</span>
-          <span className="">R$ 40,00</span>
+          <span className="">{formatPrice(deliveryFee)}</span>
         </div>
         <div className="mb-2 h-0.5 w-full bg-gray-div"></div>
         <div className="mb-10 flex w-full justify-between font-semibold">
           <span className="">Total</span>
-          <span className="">R$ 201,00</span>
+          <span className="">{formatPrice(deliveryTotal)}</span>
         </div>
         <button
           className="w-full rounded bg-cart-green py-1.5 text-lg font-medium uppercase 
