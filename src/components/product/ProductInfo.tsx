@@ -67,7 +67,7 @@ export default function ProductInfo({ id }: ProductInfoProps) {
                 {categoryTranslate(product?.category)}
               </span>
               <h1 className="pb-1 text-4xl font-light">{product?.name}</h1>
-              <span className="pb-6 text-xl font-semibold text-gray-darkest">
+              <span className="pb-1 text-xl font-semibold text-gray-darkest lg:pb-6">
                 {formatPrice(product?.price_in_cents)}
               </span>
               <p className="pb-6 text-xs lg:pb-14">

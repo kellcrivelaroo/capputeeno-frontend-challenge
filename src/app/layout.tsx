@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <FilterContextProvider>
           <Header />
-          <main className="flex w-fit flex-col items-center justify-center px-8 pb-20 lg:w-container lg:px-0">
+          <main className="flex w-full flex-col items-center justify-start px-6 pb-20 lg:min-h-[calc(100vh-176px)] lg:w-container lg:px-0">
             {children}
           </main>
           <Footer />
