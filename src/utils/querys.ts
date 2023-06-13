@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client'
-import { FilterCategories, FilterPriorities } from './types'
+import { FilterCategories } from '@/utils/category-types'
+import { FilterPriorities } from '@/utils/priority-types'
 
 function getCategoryByType(category: FilterCategories) {
   if (category === FilterCategories.MUG)

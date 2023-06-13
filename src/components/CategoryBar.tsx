@@ -1,6 +1,6 @@
 'use client'
 import { FilterContext } from '@/context/filter-context'
-import { FilterCategories } from '@/utils/types'
+import { FilterCategories } from '@/utils/category-types'
 import React, { useContext, useEffect, useState } from 'react'
 
 interface selectedOptionInfoProps {

@@ -1,6 +1,13 @@
 {
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-unused-vars": "off"
+  },
   "extends": [
     "next/core-web-vitals",
     "@rocketseat/eslint-config/react"
   ]
 }
+

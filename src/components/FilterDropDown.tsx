@@ -1,7 +1,7 @@
 import { useContext, useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
-import { FilterPriorities } from '@/utils/types'
+import { FilterPriorities } from '@/utils/priority-types'
 import { FilterContext } from '@/context/filter-context'
 
 import chevIcon from '../assets/chev-down.svg'

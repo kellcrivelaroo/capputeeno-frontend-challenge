@@ -1,5 +1,6 @@
 'use client'
-import { FilterCategories, FilterPriorities } from '@/utils/types'
+import { FilterCategories } from '@/utils/category-types'
+import { FilterPriorities } from '@/utils/priority-types'
 import { ReactNode, createContext, useState } from 'react'
 
 interface ProviderProps {
