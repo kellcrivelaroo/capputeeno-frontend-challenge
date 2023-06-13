@@ -7,7 +7,8 @@ import formatPrice from '@/utils/format-price'
 import { useEffect, useState } from 'react'
 
 export default function Cart() {
-  const storedValue = localStorage.getItem('cart-products')
+  const storedValue =
+    typeof window !== 'undefined' ? localStorage.getItem('cart-products') : null
   const [cartProductsArray, setCartProductsArray] = useState<ProductProps[]>([])
   const [productsTotalQuantity, setProductsTotalQuantity] = useState(0)
   const [productsTotalPrice, setProductsTotalPrice] = useState(0)

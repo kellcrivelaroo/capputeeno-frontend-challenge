@@ -8,7 +8,10 @@ export default function CartButton() {
   const [cartItems, setCartItems] = useState(0)
 
   useEffect(() => {
-    const cartProducts = localStorage.getItem('cart-products')
+    const cartProducts =
+      typeof window !== 'undefined'
+        ? localStorage.getItem('cart-products')
+        : null
 
     if (cartProducts !== null) {
       let num = 0

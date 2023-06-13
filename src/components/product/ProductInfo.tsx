@@ -20,7 +20,10 @@ export default function ProductInfo({ id }: ProductInfoProps) {
   const router = useRouter()
 
   const handleAddToCart = () => {
-    const cartProducts = localStorage.getItem('cart-products')
+    const cartProducts =
+      typeof window !== 'undefined'
+        ? localStorage.getItem('cart-products')
+        : null
 
     if (cartProducts) {
       const cartProductsArray = JSON.parse(cartProducts)
@@ -32,12 +35,14 @@ export default function ProductInfo({ id }: ProductInfoProps) {
       } else {
         cartProductsArray.push({ ...product, quantity: 1 })
       }
-      localStorage.setItem('cart-products', JSON.stringify(cartProductsArray))
+      if (typeof window !== 'undefined')
+        localStorage.setItem('cart-products', JSON.stringify(cartProductsArray))
     } else {
-      localStorage.setItem(
-        'cart-products',
-        JSON.stringify([{ ...product, quantity: 1 }]),
-      )
+      if (typeof window !== 'undefined')
+        localStorage.setItem(
+          'cart-products',
+          JSON.stringify([{ ...product, quantity: 1 }]),
+        )
     }
 
     router.push('/cart')

@@ -30,7 +30,8 @@ export default function ProductCard({
       if (item.id !== product.id) return item
       return { ...item, quantity: newValue }
     })
-    localStorage.setItem('cart-products', JSON.stringify(updatedCartProducts))
+    if (typeof window !== 'undefined')
+      localStorage.setItem('cart-products', JSON.stringify(updatedCartProducts))
     setTotalQuantity(totalQuantity + difValue)
   }
 
@@ -39,7 +40,8 @@ export default function ProductCard({
       if (item.id !== product.id) return item
       return null
     })
-    localStorage.setItem('cart-products', JSON.stringify(updatedCartProducts))
+    if (typeof window !== 'undefined')
+      localStorage.setItem('cart-products', JSON.stringify(updatedCartProducts))
     setCartProducts(updatedCartProducts)
   }
 
