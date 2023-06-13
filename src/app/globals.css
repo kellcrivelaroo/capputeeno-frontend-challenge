@@ -25,6 +25,10 @@
   }
 }
 
+body {
+overflow-x: hidden;
+}
+
 button .icon, a .icon {
   filter: invert(48%) sepia(10%) saturate(403%) hue-rotate(201deg) brightness(91%) contrast(88%);
 }

@@ -4,6 +4,7 @@ import { Saira, Saira_Stencil_One as SairaStencilOne } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { FilterContextProvider } from '@/context/filter-context'
+import Footer from '@/components/Footer'
 
 const saira = Saira({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main className="flex w-fit flex-col items-center justify-center px-8 pb-20 lg:w-container lg:px-0">
             {children}
           </main>
+          <Footer />
         </FilterContextProvider>
       </body>
     </html>
