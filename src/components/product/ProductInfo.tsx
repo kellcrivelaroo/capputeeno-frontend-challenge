@@ -48,7 +48,7 @@ export default function ProductInfo({ id }: ProductInfoProps) {
       {!product ? (
         <LoadSpiner />
       ) : (
-        <div className="grid w-full grid-cols-2 gap-8">
+        <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-8">
           <Image
             src={product?.image_url}
             alt=""
@@ -65,14 +65,14 @@ export default function ProductInfo({ id }: ProductInfoProps) {
               <span className="pb-6 text-xl font-semibold text-gray-darkest">
                 {formatPrice(product?.price_in_cents)}
               </span>
-              <p className="pb-14 text-xs">
+              <p className="pb-6 text-xs lg:pb-14">
                 *Frete de R$40,00 para todo o Brasil. Grátis para compras acima
                 de R$900,00
               </p>
               <span className="pb-2 font-semibold uppercase text-gray-light">
                 Descrição
               </span>
-              <p className="text-sm">{product?.description}</p>
+              <p className="pb-8 text-sm lg:pb-0">{product?.description}</p>
             </div>
             <button
               className="flex items-center justify-center gap-2 rounded bg-brand-blue py-2 uppercase 

@@ -1,9 +1,5 @@
 import { ReactNode } from 'react'
-import {
-  Saira,
-  Saira_Stencil_One as SairaStencilOne,
-  Bai_Jamjuree as bj,
-} from 'next/font/google'
+import { Saira, Saira_Stencil_One as SairaStencilOne } from 'next/font/google'
 
 import './globals.css'
 import Header from '@/components/Header'
@@ -34,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <FilterContextProvider>
           <Header />
-          <main className="flex w-container flex-col items-center justify-center pb-20">
+          <main className="flex w-fit flex-col items-center justify-center px-8 pb-20 lg:w-container lg:px-0">
             {children}
           </main>
         </FilterContextProvider>

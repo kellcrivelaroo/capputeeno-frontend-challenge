@@ -44,7 +44,7 @@ export default function ProductCard({
   }
 
   return (
-    <div className="mt-4 grid min-h-[212px] grid-cols-[256px_1fr] overflow-hidden rounded-lg bg-white">
+    <div className="mt-4 grid min-h-[212px] grid-cols-1 overflow-hidden rounded-lg bg-white lg:grid-cols-[256px_1fr]">
       <Image
         src={product.image_url}
         alt=""

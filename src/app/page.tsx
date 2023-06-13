@@ -9,7 +9,10 @@ import { ApolloProvider } from '@apollo/client'
 export default function Home() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex h-20 w-full items-center justify-between">
+      <div
+        className="flex h-24 w-screen flex-col items-center justify-center gap-4 px-6 lg:h-20 lg:w-full 
+      lg:flex-row lg:justify-between lg:px-0"
+      >
         <CategoryBar />
         <FilterDropDown />
       </div>

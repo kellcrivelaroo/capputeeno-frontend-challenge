@@ -18,8 +18,8 @@ export default function ProductCard(product: ProductCardProps) {
 
   return (
     <div
-      className="group flex h-[378px] w-full cursor-pointer flex-col overflow-hidden rounded-lg bg-white 
-    transition-all duration-300 hover:scale-[1.03] hover:shadow-black hover:drop-shadow-lg"
+      className="group flex h-auto w-full cursor-pointer flex-col overflow-hidden rounded-lg bg-white transition-all 
+    duration-300 hover:scale-[1.03] hover:shadow-black hover:drop-shadow-lg lg:h-[378px]"
       onClick={handleCardClick}
     >
       <Image

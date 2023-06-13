@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 * {
-    scrollbar-width: thin;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 *::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
   }
 
 *::-webkit-scrollbar-track {
@@ -15,12 +15,14 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
-body {
-  overflow: overlay;
+@media(min-width:600px) {
+  body {
+    overflow: overlay;
+  }
 }
 
 button .icon, a .icon {

@@ -1,8 +1,8 @@
 'use client'
 import { ProductProps } from '@/utils/interfaces'
 import BackButton from '@/components/BackButton'
-import OrderSummary from './components/OrderSummary'
-import ProductCard from './components/ProductCard'
+import OrderSummary from '@/components/cart/OrderSummary'
+import ProductCard from '@/components/cart/ProductCard'
 import formatPrice from '@/utils/format-price'
 import { useEffect, useState } from 'react'
 
@@ -33,7 +33,7 @@ export default function Cart() {
   }, [storedValue])
 
   return (
-    <div className="grid w-full grid-cols-[1fr_352px] gap-8 py-10 text-gray-dark">
+    <div className="grid w-full grid-cols-1 gap-8 pt-4 text-gray-dark lg:grid-cols-[1fr_352px] lg:pt-10">
       <div className="flex flex-col">
         <BackButton navigate="/" />
         <h1 className="mb-2 mt-6 text-2xl font-medium uppercase">

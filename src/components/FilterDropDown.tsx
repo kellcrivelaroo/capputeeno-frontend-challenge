@@ -40,7 +40,7 @@ export default function FilterDropDown() {
   const handleOpen = () => setIsOpen((prev) => !prev)
 
   return (
-    <div className="relative z-10">
+    <div className="relative z-10 -mr-1 place-self-end lg:mr-0 lg:place-self-auto">
       <button
         className="flex gap-2 text-gray-light"
         ref={buttonRef}

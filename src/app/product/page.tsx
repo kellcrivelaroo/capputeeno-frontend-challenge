@@ -1,6 +1,6 @@
 'use client'
 import BackButton from '@/components/BackButton'
-import ProductInfo from './components/ProductInfo'
+import ProductInfo from '@/components/product/ProductInfo'
 import { client } from '@/lib/apollo'
 import { ApolloProvider } from '@apollo/client'
 

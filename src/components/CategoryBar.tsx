@@ -32,7 +32,10 @@ export default function CategoryBar() {
   }
 
   return (
-    <ul className="relative flex gap-10 text-gray-light [&>li.selected]:font-bold [&>li]:cursor-pointer [&>li]:uppercase">
+    <ul
+      className="relative flex w-full justify-between gap-0 text-sm text-gray-light lg:w-auto lg:justify-normal 
+      lg:gap-10 lg:text-base [&>li.selected]:font-bold [&>li]:cursor-pointer [&>li]:uppercase"
+    >
       <li
         className={`${category === FilterCategories.ALL && 'selected'}`}
         onClick={(e) => handleOptionClick(e, FilterCategories.ALL)}

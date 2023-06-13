@@ -1,7 +1,7 @@
 import formatPrice from '@/utils/format-price'
 
 export default function OrderSummary({ total }: { total: number }) {
-  const deliveryFee = 4000
+  const deliveryFee = total >= 90000 || total === 0 ? 0 : 4000
   const deliveryTotal = total + deliveryFee
 
   return (

@@ -43,7 +43,7 @@ export default function Pagination() {
   }, [numberOfProducts, totalPages, page])
 
   return (
-    <div className="mb-8 flex w-full items-center justify-end gap-1">
+    <div className="mb-8 flex w-full items-center justify-end gap-1 pr-6 lg:pr-0">
       {pagination}
       <button
         className="transition-color flex h-8 w-8 items-center justify-center rounded-lg border
