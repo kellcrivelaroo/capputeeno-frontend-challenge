@@ -5,7 +5,10 @@ export default function OrderSummary({ total }: { total: number }) {
   const deliveryTotal = total + deliveryFee
 
   return (
-    <div className="flex min-h-full w-full flex-col justify-between gap-20 rounded bg-white p-6 pt-4 text-gray-dark">
+    <div
+      className="flex min-h-full w-full flex-col justify-between gap-10 rounded bg-white p-6 pt-4 
+    text-gray-dark lg:gap-20"
+    >
       {/* Bloco superior */}
       <div className="flex flex-col">
         <span className="mb-7 text-xl font-semibold uppercase">

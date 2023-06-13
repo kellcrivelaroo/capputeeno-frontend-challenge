@@ -52,7 +52,7 @@ export default function ProductCard({
         height={580}
         className="h-full object-cover"
       />
-      <div className="flex flex-col justify-between p-4 pl-8">
+      <div className="flex flex-col justify-between p-4 lg:pl-8">
         <div>
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-xl font-light">{product.name}</h2>
@@ -68,7 +68,7 @@ export default function ProductCard({
               />
             </button>
           </div>
-          <p className="text-sm">{product.description}</p>
+          <p className="mb-4 text-sm">{product.description}</p>
         </div>
         <div className="mb-2 flex items-center justify-between">
           <select

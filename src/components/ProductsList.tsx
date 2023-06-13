@@ -27,7 +27,7 @@ export default function ProductsList() {
       {loading ? (
         <LoadSpiner />
       ) : (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 px-8 lg:grid-cols-4 lg:px-0">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 px-10 lg:grid-cols-4 lg:px-0">
           {filteredProducts?.map((product: ProductProps) => {
             return (
               <ProductCard
