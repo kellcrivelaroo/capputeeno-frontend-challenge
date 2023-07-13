@@ -10,7 +10,7 @@ interface productParams {
   }
 }
 
-export default function Product({ searchParams }: productParams) {
+export default async function Product({ searchParams }: productParams) {
   return (
     <ApolloProvider client={client}>
       <div className="flex w-full py-6">

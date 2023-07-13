@@ -5,19 +5,18 @@ import { ProductProps } from '@/utils/interfaces'
 import formatPrice from '@/utils/format-price'
 import LoadSpiner from '@/components/LoadSpiner'
 import { useRouter } from 'next/navigation'
-
-interface ProductInfoProps {
-  id: string
-}
+import { useContext } from 'react'
+import { FilterContext } from '@/context/filter-context'
 
 const categoryTranslate = (category: string) => {
   if (category === 'mugs') return `Canecas`
   return `Camisetas`
 }
 
-export default function ProductInfo({ id }: ProductInfoProps) {
+export default function ProductInfo({ id }: { id: string }) {
   const product: ProductProps = useGetProduct(id)
   const router = useRouter()
+  const { cartItems, setCartItems } = useContext(FilterContext)
 
   const handleAddToCart = () => {
     const cartProducts =
@@ -44,7 +43,7 @@ export default function ProductInfo({ id }: ProductInfoProps) {
           JSON.stringify([{ ...product, quantity: 1 }]),
         )
     }
-
+    setCartItems(cartItems + 1)
     router.push('/cart')
   }
 

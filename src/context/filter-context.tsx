@@ -18,6 +18,8 @@ export const FilterContext = createContext({
   setSearch: (value: string) => {},
   numberOfProducts: 0,
   setNumberOfProducts: (value: number) => {},
+  cartItems: 0,
+  setCartItems: (value: number) => {},
 })
 
 export function FilterContextProvider({ children }: ProviderProps) {
@@ -26,6 +28,7 @@ export function FilterContextProvider({ children }: ProviderProps) {
   const [page, setPage] = useState(0)
   const [search, setSearch] = useState('')
   const [numberOfProducts, setNumberOfProducts] = useState(0)
+  const [cartItems, setCartItems] = useState(0)
 
   return (
     <FilterContext.Provider
@@ -40,6 +43,8 @@ export function FilterContextProvider({ children }: ProviderProps) {
         setSearch,
         numberOfProducts,
         setNumberOfProducts,
+        cartItems,
+        setCartItems,
       }}
     >
       {children}

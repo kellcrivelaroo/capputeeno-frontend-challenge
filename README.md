@@ -17,7 +17,6 @@ Tarefas pendendentes:
 - [ ] Implementação do cache do Next.js
 - [ ] Testes unitários
 - [ ] Refatoração do método de busca do Search Bar
-- [ ] Atualização da quantidade de itens no carrinho de compras, em tempo real
 
 Desafios encontrados durante o desenvolvimento:
 

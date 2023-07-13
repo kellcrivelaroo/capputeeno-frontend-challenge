@@ -1,11 +1,12 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import Image from 'next/image'
 import shoppingBag from '../assets/shopping-bag.svg'
 import Link from 'next/link'
+import { FilterContext } from '@/context/filter-context'
 
 export default function CartButton() {
-  const [cartItems, setCartItems] = useState(0)
+  const { cartItems, setCartItems } = useContext(FilterContext)
 
   useEffect(() => {
     const cartProducts =
@@ -20,7 +21,7 @@ export default function CartButton() {
       )
       setCartItems(num)
     }
-  }, [])
+  }, [setCartItems])
 
   return (
     <Link className="relative" href="/cart">
